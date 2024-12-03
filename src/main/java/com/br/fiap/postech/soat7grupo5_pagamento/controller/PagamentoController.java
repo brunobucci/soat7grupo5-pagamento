@@ -32,11 +32,14 @@ public class PagamentoController {
 		return new ResponseEntity<>(pagamentoService.registarPagamento(pagamentoDto), HttpStatus.CREATED);
 	}
 	
-	@PutMapping(path="/receberRetornoPagamento/{idPedido}/{idStatusPagamento}")
+	@PutMapping(path="/receberRetornoPagamento/{idPedido}/{idPagamento}/{idStatusPagamento}")
 	@Operation(summary = "Receber retorno do processador de pagamento.")
-	ResponseEntity<PagamentoDto> receberRetornoPagamento(@Parameter(description = "ID do pedido.", example = "1") @PathVariable int idPedido, @Parameter(description = "ID do status do pgto. do pedido (0: Pendente Pagamento, 1: Aprovado, 2: Reprovado).", example = "1") @PathVariable int idStatusPagamento) {
+	ResponseEntity<PagamentoDto> receberRetornoPagamento(@Parameter(description = "ID do pedido.", example = "1") @PathVariable int idPedido,
+			@Parameter(description = "ID do pagamento.", example = "1") @PathVariable int idPagamento,
+			@Parameter(description = "ID do status do pgto. do pedido (0: Pendente Pagamento, 1: Aprovado, 2: Reprovado).", example = "1") @PathVariable int idStatusPagamento) {
 		PagamentoDto pagamentoDto = new PagamentoDto();
 		pagamentoDto.setIdPedido(idPedido);
+		pagamentoDto.setIdPagamento(idPagamento);
 		pagamentoDto.setIdStatusPagamento(idStatusPagamento);
 		return new ResponseEntity<>(pagamentoService.atualizarStatusPagamento(pagamentoDto), HttpStatus.OK);
 	}
