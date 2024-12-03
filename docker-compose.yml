@@ -1,0 +1,15 @@
+services:
+  soat7grupo5-mysql:
+    image: mysql:8
+    volumes:
+    - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: soat7grupo5-pagamento
+      MYSQL_USER: soat7grupo5
+      MYSQL_PASSWORD: soat7grupo5
+    ports:
+      - 3306:3306
+
+
