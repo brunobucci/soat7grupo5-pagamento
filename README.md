@@ -3,9 +3,14 @@
 ## Repositório: Microserviço Pagamento (MySQL)
 
 
-### Video
+### Videos
 
-Link do vídeo detalhando o Microserviço Pagamento: https://www.youtube.com/watch?v=YplkjITVdOM
+Link para o video detalhando o funcionamento das aplicações (Micro-serviços):  https://youtu.be/yakGs227jBI
+
+Link para o video detalhando a arquitetura de Micro-serviços: https://youtu.be/dDpzmyWP7ak
+
+Link para o video detalhando o processo de CI/CD:  https://youtu.be/Nk5S3jUgzmg
+
 
 ### Swagger
 Link do Swagger do Microserviço Pagamento: http://ec2-35-173-187-235.compute-1.amazonaws.com:8081/swagger-ui/index.html
